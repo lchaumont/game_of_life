@@ -1,7 +1,8 @@
 html,
 body {
     height: 90%;
-    background-color: rgb(36, 36, 36);
+    background-color: rgb(51, 51, 51);
+    color: white;
 }
 
 button {
@@ -28,6 +29,14 @@ button:disabled {
 
 /* --------- */
 
+/* Main container */
+#main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+
 /* Game board */
 #game-board {
     aspect-ratio: 1 / 1;
@@ -50,17 +59,35 @@ div.cell {
     border: 1px solid black;
 }
 
-div.alive {
+div.alive:not(.pattern-overlapped) {
     background-color: black;
 }
 
-div.dead {
+div.dead:not(.pattern-overlapped) {
     background-color: white;
 }
 
-div.border {
+div.border:not(.pattern-overlapped) {
     background-color: yellow;
 }
+
+div.pattern-overlapped {
+    background-color: red;
+}
+
+/* Pattern board */
+#pattern-board {
+    flex: 1;
+    height: 90%;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#pattern-pos-selectors > * {
+    vertical-align: middle;
+}
+
 
 /* --------- */
 

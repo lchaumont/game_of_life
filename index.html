@@ -11,7 +11,21 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     </head>
     <body>
-        <div id="game-board"></div>
+        <div id="main-container">
+            <div id="game-board"></div>
+            <div id="pattern-board">
+                <div id="pattern-list">
+                    <button class="command-button pattern" onclick="applyPattern('glider')" onmouseover="displayPattern('glider')" onmouseleave="clearPatternOverlapped()">Glider</button>
+                    <button class="command-button pattern" onclick="applyPattern('glider-gun')" onmouseover="displayPattern('glider-gun')" onmouseleave="clearPatternOverlapped()">Glider Gun</button>
+                </div>
+                <div id="pattern-pos-selectors">
+                    <input id="pattern-pos-selector-x" type="range" min="0" step="1" value="0">
+                    <output id="pattern-pos-selector-x-output"></output>
+                    <input id="pattern-pos-selector-y" type="range" min="0" step="1" value="0">
+                    <output id="pattern-pos-selector-y-output"></output>
+                </div>
+            </div>
+        </div>
         <button class="command-button" id="resume-game" disabled onclick="resumeGame()">
             <span class="material-icons md-18">play_arrow</span>
             Resume
